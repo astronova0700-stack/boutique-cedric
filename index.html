@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENYA GROUP — Importation de voitures d'Allemagne</title>
+  <meta name="description" content="ENYA GROUP importe votre voiture d'Allemagne clés en main : sourcing sur commande, occasions premium sélectionnées, démarches administratives et livraison partout en France. Appelez le 07 56 44 43 19.">
+  <meta property="og:title" content="ENYA GROUP — Importation de voitures d'Allemagne">
+  <meta property="og:description" content="Votre voiture d'Allemagne, livrée clés en main. Prix allemands, sélection rigoureuse, démarches gérées de A à Z.">
+  <meta property="og:type" content="website">
+
+  <!-- Typographies : Space Grotesk (titres) + Inter (corps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       ENYA GROUP — Feuille de style unique
+       Direction artistique : automobile premium, fond charbon,
+       accent doré/champagne, beaucoup d'espace négatif.
+       ============================================================ */
+    :root{
+      --noir:        #0D0D0F;   /* fond principal            */
+      --anthracite:  #1A1A1E;   /* surfaces / cartes         */
+      --blanc:       #F4F1EA;   /* blanc cassé               */
+      --gris:        #A39E93;   /* texte secondaire          */
+      --or:          #C9A96A;   /* accent doré / champagne   */
+      --or-fonce:    #A8873F;
+      --or-doux:     rgba(201,169,106,.14);
+      --ligne:       rgba(244,241,234,.09);
+      --font-titre:  'Space Grotesk', sans-serif;
+      --font-corps:  'Inter', sans-serif;
+      --header-h:    76px;
+      --ease-out:    cubic-bezier(.16,1,.3,1);
+    }
+
+    *,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+
+    html{
+      scroll-behavior:smooth;              /* défilement fluide des ancres */
+      scroll-padding-top:var(--header-h);  /* compensation du header fixe  */
+    }
+
+    body{
+      background:var(--noir);
+      color:var(--blanc);
+      font-family:var(--font-corps);
+      font-size:16px;
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    img{ display:block; max-width:100%; }
+    a{ color:inherit; text-decoration:none; }
+    ul,ol{ list-style:none; }
+    section{ position:relative; }
+
+    /* ---------- Utilitaires ---------- */
+    .conteneur{ width:min(1180px, 92%); margin-inline:auto; }
+
+    .sur-titre{
+      display:inline-flex; align-items:center; gap:.7rem;
+      font-family:var(--font-titre); font-size:.78rem; font-weight:600;
+      letter-spacing:.22em; text-transform:uppercase; color:var(--or);
+    }
+    .sur-titre::before{ content:""; width:34px; height:1px; background:var(--or); }
+
+    .titre-section{
+      font-family:var(--font-titre);
+      font-size:clamp(1.9rem, 4.6vw, 3.1rem);
+      font-weight:600; line-height:1.12; letter-spacing:-.01em;
+      margin:.9rem 0 1rem;
+    }
+
+    .texte-gris{ color:var(--gris); max-width:58ch; }
+
+    /* ---------- Boutons ---------- */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+      font-family:var(--font-titre); font-weight:600; font-size:.95rem;
+      padding:.95rem 1.7rem; border-radius:999px; border:1px solid transparent;
+      cursor:pointer; transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), background .3s, color .3s, border-color .3s;
+      white-space:nowrap;
+    }
+    .btn-or{
+      background:var(--or); color:#0D0D0F;
+      box-shadow:0 10px 30px -12px rgba(201,169,106,.55);
+    }
+    .btn-or:hover{ transform:translateY(-2px); background:#D8BC82; box-shadow:0 18px 44px -14px rgba(201,169,106,.7); }
+    .btn-contour{
+      border-color:rgba(244,241,234,.35); color:var(--blanc); background:rgba(13,13,15,.25);
+      backdrop-filter:blur(6px);
+    }
+    .btn-contour:hover{ transform:translateY(-2px); border-color:var(--or); color:var(--or); box-shadow:0 14px 34px -16px rgba(201,169,106,.45); }
+    .btn svg{ width:18px; height:18px; flex:none; }
+
+    /* ============================================================
+       HEADER FIXE — transparent au chargement, flouté au scroll
+       ============================================================ */
+    .entete{
+      position:fixed; inset:0 0 auto 0; z-index:100; height:var(--header-h);
+      display:flex; align-items:center;
+      transition:background .4s ease, border-color .4s ease, backdrop-filter .4s ease;
+      border-bottom:1px solid transparent;
+    }
+    .entete.scroll{
+      background:rgba(13,13,15,.72);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-bottom-color:var(--ligne);
+    }
+    .entete-inner{ display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+
+    .logo{
+      font-family:var(--font-titre); font-weight:700; font-size:1.15rem;
+      letter-spacing:.16em;
+    }
+    .logo span{ color:var(--or); }
+
+    .nav{ display:flex; align-items:center; gap:2rem; }
+    .nav a{
+      font-size:.9rem; font-weight:500; color:var(--gris);
+      transition:color .3s; position:relative;
+    }
+    .nav a::after{
+      content:""; position:absolute; left:0; bottom:-6px; width:0; height:1px;
+      background:var(--or); transition:width .35s var(--ease-out);
+    }
+    .nav a:hover{ color:var(--blanc); }
+    .nav a:hover::after{ width:100%; }
+
+    .entete .btn-tel{ padding:.68rem 1.3rem; font-size:.86rem; }
+
+    /* Burger mobile */
+    .burger{
+      display:none; background:none; border:0; cursor:pointer;
+      width:44px; height:44px; position:relative; z-index:110;
+    }
+    .burger span{
+      position:absolute; left:10px; right:10px; height:2px; background:var(--blanc);
+      transition:transform .35s var(--ease-out), opacity .3s;
+    }
+    .burger span:nth-child(1){ top:15px; }
+    .burger span:nth-child(2){ top:22px; }
+    .burger span:nth-child(3){ top:29px; }
+    .burger.ouvert span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .burger.ouvert span:nth-child(2){ opacity:0; }
+    .burger.ouvert span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+    /* ============================================================
+       HERO plein écran + parallaxe
+       ============================================================ */
+    .hero{
+      min-height:100svh; display:flex; align-items:center;
+      overflow:hidden; isolation:isolate;
+    }
+    .hero-media{ position:absolute; inset:-12% 0; z-index:-2; will-change:transform; }
+    .hero-media img{
+      width:100%; height:100%; object-fit:cover;
+      filter:contrast(1.06) saturate(.92) brightness(.9); /* traitement cinématique */
+    }
+    .hero::after{ /* overlay sombre pour la lisibilité */
+      content:""; position:absolute; inset:0; z-index:-1;
+      background:linear-gradient(180deg, rgba(13,13,15,.62) 0%, rgba(13,13,15,.38) 45%, rgba(13,13,15,.92) 100%);
+    }
+    .hero-contenu{ padding-top:var(--header-h); max-width:760px; }
+    .hero h1{
+      font-family:var(--font-titre);
+      font-size:clamp(2.4rem, 6.4vw, 4.4rem);
+      font-weight:600; line-height:1.06; letter-spacing:-.015em;
+      margin:1.1rem 0 1.3rem;
+    }
+    .hero h1 em{ font-style:normal; color:var(--or); }
+    .hero p{ font-size:clamp(1rem, 1.6vw, 1.15rem); color:#D8D3C8; max-width:52ch; }
+    .hero-cta{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.2rem; }
+
+    /* Indicateur de scroll animé */
+    .scroll-indic{
+      position:absolute; left:50%; bottom:2rem; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:.5rem;
+      color:var(--gris); font-size:.72rem; letter-spacing:.28em; text-transform:uppercase;
+    }
+    .scroll-indic::after{
+      content:""; width:1px; height:52px;
+      background:linear-gradient(180deg, var(--or), transparent);
+      animation:defile 2.2s var(--ease-out) infinite;
+    }
+    @keyframes defile{
+      0%{ transform:scaleY(0); transform-origin:top; }
+      45%{ transform:scaleY(1); transform-origin:top; }
+      55%{ transform:scaleY(1); transform-origin:bottom; }
+      100%{ transform:scaleY(0); transform-origin:bottom; }
+    }
+
+    /* ============================================================
+       BANDEAU RÉASSURANCE — compteurs animés
+       ============================================================ */
+    .chiffres{ background:var(--anthracite); border-block:1px solid var(--ligne); }
+    .chiffres-grille{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:2rem;
+      padding:3.4rem 0;
+    }
+    .chiffre{ text-align:center; }
+    .chiffre-valeur{
+      font-family:var(--font-titre); font-weight:700;
+      font-size:clamp(2rem, 4.4vw, 3.2rem); color:var(--or); line-height:1;
+    }
+    .chiffre-valeur small{ font-size:.55em; font-weight:600; }
+    .chiffre-label{ margin-top:.6rem; font-size:.88rem; color:var(--gris); }
+
+    /* ============================================================
+       SECTION VÉHICULES — grille de cartes
+       ============================================================ */
+    .section{ padding:clamp(4.5rem, 9vw, 7.5rem) 0; }
+    .section-tete{ margin-bottom:3rem; }
+
+    .vehicules-grille{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem;
+    }
+    .carte-vehicule{
+      background:var(--anthracite); border:1px solid var(--ligne); border-radius:18px;
+      overflow:hidden; display:flex; flex-direction:column;
+      transition:transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .4s;
+    }
+    .carte-vehicule:hover{
+      transform:translateY(-8px);
+      border-color:rgba(201,169,106,.4);
+      box-shadow:0 30px 60px -24px rgba(201,169,106,.28), 0 18px 40px -20px rgba(0,0,0,.7);
+    }
+    .carte-img{ position:relative; aspect-ratio:16/10; overflow:hidden; }
+    .carte-img img{
+      width:100%; height:100%; object-fit:cover;
+      filter:contrast(1.05) saturate(.95);
+      transition:transform .7s var(--ease-out);
+    }
+    .carte-vehicule:hover .carte-img img{ transform:scale(1.07); } /* zoom léger au hover */
+    .badge{
+      position:absolute; top:.9rem; left:.9rem;
+      font-family:var(--font-titre); font-size:.68rem; font-weight:600;
+      letter-spacing:.14em; text-transform:uppercase;
+      background:rgba(13,13,15,.68); color:var(--or);
+      border:1px solid rgba(201,169,106,.5); border-radius:999px;
+      padding:.34rem .8rem; backdrop-filter:blur(6px);
+    }
+    .carte-corps{ padding:1.4rem 1.4rem 1.6rem; display:flex; flex-direction:column; gap:.9rem; flex:1; }
+    .carte-corps h3{ font-family:var(--font-titre); font-size:1.22rem; font-weight:600; }
+    .carte-specs{ display:flex; gap:1.1rem; font-size:.84rem; color:var(--gris); }
+    .carte-specs li{ display:flex; align-items:center; gap:.4rem; }
+    .carte-specs svg{ width:14px; height:14px; stroke:var(--or); }
+    .carte-bas{
+      margin-top:auto; display:flex; align-items:center; justify-content:space-between;
+      gap:1rem; padding-top:1rem; border-top:1px solid var(--ligne);
+    }
+    .prix{ font-family:var(--font-titre); }
+    .prix small{ display:block; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gris); }
+    .prix strong{ font-size:1.28rem; font-weight:700; color:var(--or); }
+    .btn-carte{
+      font-family:var(--font-titre); font-size:.82rem; font-weight:600;
+      padding:.62rem 1.1rem; border-radius:999px;
+      border:1px solid rgba(201,169,106,.55); color:var(--or);
+      transition:background .3s, color .3s, transform .35s var(--ease-out), box-shadow .35s;
+    }
+    .btn-carte:hover{
+      background:var(--or); color:#0D0D0F; transform:translateY(-2px);
+      box-shadow:0 12px 28px -12px rgba(201,169,106,.6);
+    }
+
+    /* ============================================================
+       SECTION IMPORTATION — 2 colonnes + timeline verticale
+       ============================================================ */
+    .import{ background:var(--anthracite); border-block:1px solid var(--ligne); }
+    .import-grille{
+      display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(2.5rem, 6vw, 5rem);
+      align-items:center;
+    }
+    .import-img{ position:relative; border-radius:20px; overflow:hidden; }
+    .import-img img{
+      width:100%; height:100%; min-height:420px; object-fit:cover;
+      filter:contrast(1.05) saturate(.95);
+    }
+    .import-img::after{
+      content:""; position:absolute; inset:0;
+      box-shadow:inset 0 0 0 1px rgba(244,241,234,.08); border-radius:20px;
+    }
+
+    /* Timeline verticale animée.
+       Le rail n'est PAS une ligne continue derrière les pastilles : il est
+       découpé en segments dessinés entre les cercles (pseudo-éléments de
+       chaque .etape). Le trait ne passe donc jamais derrière un numéro. */
+    .timeline{ position:relative; margin-top:2.4rem; padding-left:2.6rem; }
+    .etape{ position:relative; padding:0 0 2.2rem; }
+    .etape:last-child{ padding-bottom:0; }
+
+    /* Segment de rail reliant la pastille de cette étape à la suivante */
+    .etape:not(:last-child)::before,
+    .etape:not(:last-child)::after{
+      content:""; position:absolute; left:-2.6rem; top:41px; bottom:0;
+      width:40px; background-position:center top; background-repeat:no-repeat;
+      background-size:1px 100%;
+    }
+    .etape:not(:last-child)::before{ background-image:linear-gradient(var(--ligne), var(--ligne)); } /* rail de fond */
+    .etape:not(:last-child)::after{  /* rail doré qui grandit au scroll */
+      background-image:linear-gradient(var(--or), var(--or-fonce));
+      transform:scaleY(0); transform-origin:top;
+      transition:transform .55s var(--ease-out);
+    }
+    /* Les segments se remplissent l'un après l'autre */
+    .timeline.in-view .etape:nth-child(1)::after{ transform:scaleY(1); transition-delay:.15s; }
+    .timeline.in-view .etape:nth-child(2)::after{ transform:scaleY(1); transition-delay:.7s; }
+    .timeline.in-view .etape:nth-child(3)::after{ transform:scaleY(1); transition-delay:1.25s; }
+
+    /* Pastille numérotée */
+    .etape-num{
+      position:absolute; left:-2.6rem; top:0;
+      width:40px; height:40px; border-radius:50%;
+      display:grid; place-items:center;
+      font-family:var(--font-titre); font-weight:700; font-size:.95rem;
+      background:var(--noir); color:var(--or);
+      border:1px solid rgba(201,169,106,.55);
+      transition:border-color .45s ease, box-shadow .45s ease;
+    }
+    /* La pastille s'illumine quand le rail l'atteint */
+    .timeline.in-view .etape:nth-child(1) .etape-num{ border-color:var(--or); box-shadow:0 0 0 4px rgba(201,169,106,.12); transition-delay:.15s; }
+    .timeline.in-view .etape:nth-child(2) .etape-num{ border-color:var(--or); box-shadow:0 0 0 4px rgba(201,169,106,.12); transition-delay:.7s; }
+    .timeline.in-view .etape:nth-child(3) .etape-num{ border-color:var(--or); box-shadow:0 0 0 4px rgba(201,169,106,.12); transition-delay:1.25s; }
+    .timeline.in-view .etape:nth-child(4) .etape-num{ border-color:var(--or); box-shadow:0 0 0 4px rgba(201,169,106,.12); transition-delay:1.8s; }
+    .etape h3{ font-family:var(--font-titre); font-size:1.12rem; font-weight:600; margin-bottom:.3rem; }
+    .etape p{ font-size:.92rem; color:var(--gris); max-width:48ch; }
+
+    /* ============================================================
+       SECTION POURQUOI NOUS — 4 cartes avec icônes
+       ============================================================ */
+    .atouts-grille{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.4rem; }
+    .atout{
+      background:var(--anthracite); border:1px solid var(--ligne); border-radius:18px;
+      padding:1.9rem 1.6rem;
+      transition:transform .5s var(--ease-out), box-shadow .5s var(--ease-out), border-color .4s;
+    }
+    .atout:hover{
+      transform:translateY(-6px); border-color:rgba(201,169,106,.4);
+      box-shadow:0 26px 54px -24px rgba(201,169,106,.25);
+    }
+    .atout-icone{
+      width:52px; height:52px; border-radius:14px; display:grid; place-items:center;
+      background:var(--or-doux); border:1px solid rgba(201,169,106,.3);
+      margin-bottom:1.2rem;
+    }
+    .atout-icone svg{ width:24px; height:24px; stroke:var(--or); }
+    .atout h3{ font-family:var(--font-titre); font-size:1.05rem; font-weight:600; margin-bottom:.5rem; }
+    .atout p{ font-size:.88rem; color:var(--gris); }
+
+    /* ============================================================
+       SECTION AVIS CLIENTS
+       ============================================================ */
+    .avis{ background:var(--anthracite); border-block:1px solid var(--ligne); }
+    .avis-grille{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    .avis-carte{
+      background:var(--noir); border:1px solid var(--ligne); border-radius:18px;
+      padding:1.9rem 1.7rem; display:flex; flex-direction:column; gap:1.1rem;
+      transition:transform .5s var(--ease-out), border-color .4s, box-shadow .5s var(--ease-out);
+    }
+    .avis-carte:hover{
+      transform:translateY(-6px); border-color:rgba(201,169,106,.35);
+      box-shadow:0 26px 54px -26px rgba(201,169,106,.22);
+    }
+    .etoiles{ display:flex; gap:.25rem; }
+    .etoiles svg{ width:17px; height:17px; fill:var(--or); }
+    .avis-carte blockquote{ font-size:.95rem; color:#D8D3C8; font-style:italic; }
+    .avis-auteur{ margin-top:auto; font-family:var(--font-titre); font-size:.9rem; }
+    .avis-auteur strong{ color:var(--blanc); }
+    .avis-auteur span{ color:var(--gris); font-size:.82rem; display:block; }
+
+    /* ============================================================
+       SECTION CONTACT FINALE
+       ============================================================ */
+    .contact{ overflow:hidden; isolation:isolate; }
+    .contact-media{ position:absolute; inset:0; z-index:-2; }
+    .contact-media img{
+      width:100%; height:100%; object-fit:cover;
+      filter:contrast(1.06) saturate(.85) brightness(.75);
+    }
+    .contact::after{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background:linear-gradient(180deg, rgba(13,13,15,.94) 0%, rgba(13,13,15,.78) 55%, rgba(13,13,15,.95) 100%);
+    }
+    .contact-grille{
+      display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2.5rem, 6vw, 5rem);
+      align-items:center;
+    }
+    .contact h2{
+      font-family:var(--font-titre);
+      font-size:clamp(2.2rem, 5.4vw, 3.6rem); font-weight:600; line-height:1.08;
+      margin:1rem 0 1.2rem;
+    }
+    .contact h2 em{ font-style:normal; color:var(--or); }
+    .btn-geant{
+      margin-top:1.8rem; font-size:clamp(1.05rem, 2.4vw, 1.3rem);
+      padding:1.15rem 2.4rem;
+    }
+    .contact-note{ margin-top:1rem; font-size:.85rem; color:var(--gris); }
+
+    /* Mini-formulaire */
+    .form-carte{
+      background:rgba(26,26,30,.82); backdrop-filter:blur(10px);
+      border:1px solid var(--ligne); border-radius:20px; padding:2rem;
+    }
+    .form-carte h3{ font-family:var(--font-titre); font-size:1.25rem; margin-bottom:.4rem; }
+    .form-carte > p{ font-size:.87rem; color:var(--gris); margin-bottom:1.4rem; }
+    .champ{ margin-bottom:1rem; }
+    .champ label{
+      display:block; font-size:.78rem; font-weight:600; letter-spacing:.08em;
+      text-transform:uppercase; color:var(--gris); margin-bottom:.4rem;
+    }
+    .champ input, .champ textarea{
+      width:100%; background:rgba(13,13,15,.7); color:var(--blanc);
+      border:1px solid var(--ligne); border-radius:12px;
+      padding:.85rem 1rem; font-family:var(--font-corps); font-size:.95rem;
+      transition:border-color .3s, box-shadow .3s;
+    }
+    .champ input:focus, .champ textarea:focus{
+      outline:none; border-color:var(--or);
+      box-shadow:0 0 0 3px rgba(201,169,106,.18);
+    }
+    .champ textarea{ resize:vertical; min-height:96px; }
+    .form-carte .btn{ width:100%; margin-top:.4rem; }
+    /* Confirmation au submit */
+    .form-ok{
+      display:none; text-align:center; padding:2.5rem 1rem;
+    }
+    .form-ok.visible{ display:block; }
+    .form-ok svg{ width:56px; height:56px; stroke:var(--or); margin:0 auto 1.1rem; }
+    .form-ok h4{ font-family:var(--font-titre); font-size:1.3rem; margin-bottom:.5rem; }
+    .form-ok p{ font-size:.9rem; color:var(--gris); }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .pied{ border-top:1px solid var(--ligne); padding:3rem 0 2.2rem; background:var(--noir); }
+    .pied-grille{
+      display:flex; flex-wrap:wrap; gap:2rem; justify-content:space-between;
+      align-items:flex-start; padding-bottom:2rem; border-bottom:1px solid var(--ligne);
+    }
+    .pied p{ font-size:.85rem; color:var(--gris); max-width:38ch; margin-top:.7rem; }
+    .pied-tel{ font-family:var(--font-titre); font-size:1.15rem; color:var(--or); font-weight:600; }
+    .pied li{ margin-bottom:.45rem; }
+    .pied li a{ font-size:.87rem; color:var(--gris); transition:color .3s; }
+    .pied li a:hover{ color:var(--or); }
+    .pied-bas{
+      display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between;
+      padding-top:1.6rem; font-size:.78rem; color:#6E6A61;
+    }
+
+    /* ============================================================
+       BOUTON D'APPEL FLOTTANT (mobile)
+       ============================================================ */
+    .appel-flottant{
+      position:fixed; right:1.1rem; bottom:1.1rem; z-index:90;
+      width:58px; height:58px; border-radius:50%;
+      display:none; place-items:center;
+      background:var(--or); color:#0D0D0F;
+      box-shadow:0 14px 34px -8px rgba(201,169,106,.65);
+      opacity:0; transform:translateY(16px) scale(.9);
+      transition:opacity .4s ease, transform .4s var(--ease-out);
+    }
+    .appel-flottant svg{ width:24px; height:24px; }
+    .appel-flottant.visible{ opacity:1; transform:none; }
+
+    /* ============================================================
+       ANIMATIONS D'APPARITION AU SCROLL (fade-up)
+       ============================================================ */
+    .reveal{
+      opacity:0; transform:translateY(30px);
+      transition:opacity .9s ease, transform .9s var(--ease-out);
+      transition-delay:var(--d, 0s); /* délai en cascade sur les grilles */
+    }
+    .reveal.visible{ opacity:1; transform:none; }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 1024px){
+      .vehicules-grille{ grid-template-columns:repeat(2,1fr); }
+      .atouts-grille{ grid-template-columns:repeat(2,1fr); }
+      .avis-grille{ grid-template-columns:1fr; max-width:640px; margin-inline:auto; }
+      .chiffres-grille{ grid-template-columns:repeat(2,1fr); gap:2.4rem 1rem; }
+      .import-grille, .contact-grille{ grid-template-columns:1fr; }
+      .import-img img{ min-height:300px; }
+    }
+
+    @media (max-width: 768px){
+      .nav{
+        position:fixed; inset:var(--header-h) 0 auto 0;
+        flex-direction:column; align-items:stretch; gap:0;
+        background:rgba(13,13,15,.97); backdrop-filter:blur(16px);
+        border-bottom:1px solid var(--ligne);
+        padding:.6rem 4% 1.4rem;
+        transform:translateY(-110%); transition:transform .45s var(--ease-out);
+      }
+      .nav.ouvert{ transform:none; }
+      .nav a{ padding:.85rem 0; font-size:1rem; border-bottom:1px solid var(--ligne); }
+      .nav a::after{ display:none; }
+      .burger{ display:block; }
+      .entete .btn-tel{ display:none; } /* le bouton flottant prend le relais */
+      .vehicules-grille{ grid-template-columns:1fr; }
+      .appel-flottant{ display:grid; }
+      .hero-cta .btn{ flex:1 1 auto; }
+    }
+
+    @media (max-width: 560px){
+      .atouts-grille{ grid-template-columns:1fr; } /* cartes atouts pleine largeur sur petit écran */
+    }
+
+    /* ============================================================
+       ACCESSIBILITÉ — animations désactivées si demandé
+       ============================================================ */
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior:auto; }
+      *,*::before,*::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+      .reveal{ opacity:1; transform:none; }
+      .timeline::after{ transform:scaleY(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= HEADER FIXE ================= -->
+  <header class="entete" id="entete">
+    <div class="conteneur entete-inner">
+      <a href="#haut" class="logo">ENYA<span>&nbsp;GROUP</span></a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#vehicules">Véhicules</a>
+        <a href="#importation">Importation</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="btn btn-or btn-tel" href="tel:+33756444319">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        07 56 44 43 19
+      </a>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="haut">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-media" id="heroMedia">
+        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1920&q=80"
+             alt="Berline allemande noire photographiée de face dans une lumière cinématique" fetchpriority="high">
+      </div>
+
+      <div class="conteneur hero-contenu">
+        <p class="sur-titre reveal">Importation automobile — Allemagne → France</p>
+        <h1 class="reveal" style="--d:.1s">Votre voiture d'Allemagne,<br><em>livrée clés en main.</em></h1>
+        <p class="reveal" style="--d:.2s">
+          Prix allemands négociés, sélection rigoureuse auprès de nos partenaires outre-Rhin
+          et démarches administratives gérées de A à Z. Vous choisissez, nous nous occupons du reste.
+        </p>
+        <div class="hero-cta reveal" style="--d:.3s">
+          <a class="btn btn-or" href="tel:+33756444319">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Appeler le 07 56 44 43 19
+          </a>
+          <a class="btn btn-contour" href="#vehicules">Voir les véhicules</a>
+        </div>
+      </div>
+
+      <div class="scroll-indic" aria-hidden="true">Défiler</div>
+    </section>
+
+    <!-- ================= BANDEAU RÉASSURANCE ================= -->
+    <section class="chiffres" aria-label="Chiffres clés">
+      <div class="conteneur chiffres-grille">
+        <div class="chiffre reveal">
+          <div class="chiffre-valeur"><span class="compteur" data-cible="200" data-prefixe="+">0</span></div>
+          <p class="chiffre-label">véhicules importés depuis 2019</p>
+        </div>
+        <div class="chiffre reveal" style="--d:.1s">
+          <div class="chiffre-valeur"><span class="compteur" data-cible="30" data-prefixe="−" data-suffixe="%">0</span><small>&nbsp;d'éco.</small></div>
+          <p class="chiffre-label">jusqu'à 30&nbsp;% d'économie moyenne vs prix français</p>
+        </div>
+        <div class="chiffre reveal" style="--d:.2s">
+          <div class="chiffre-valeur"><span class="compteur" data-cible="10">0</span><small>&nbsp;jours</small></div>
+          <p class="chiffre-label">délai moyen entre commande et livraison</p>
+        </div>
+        <div class="chiffre reveal" style="--d:.3s">
+          <div class="chiffre-valeur"><span class="compteur" data-cible="100" data-suffixe="%">0</span></div>
+          <p class="chiffre-label">des démarches administratives incluses</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VÉHICULES ================= -->
+    <section class="section" id="vehicules">
+      <div class="conteneur">
+        <div class="section-tete reveal">
+          <p class="sur-titre">Sélection du moment</p>
+          <h2 class="titre-section">Nos véhicules à l'import</h2>
+          <p class="texte-gris">Une sélection d'occasions premium sourcées en Allemagne : historique vérifié, entretien documenté, kilométrage certifié. Chaque véhicule peut être réservé par téléphone.</p>
+        </div>
+
+        <div class="vehicules-grille">
+          <!-- Carte 1 -->
+          <article class="carte-vehicule reveal">
+            <div class="carte-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=75" alt="BMW M4 Competition blanche">
+              <span class="badge">Import Allemagne</span>
+            </div>
+            <div class="carte-corps">
+              <h3>BMW M4 Competition</h3>
+              <ul class="carte-specs">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2022</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>18 500 km</li>
+              </ul>
+              <div class="carte-bas">
+                <p class="prix"><small>À partir de</small><strong>62 900 €</strong></p>
+                <a class="btn-carte" href="tel:+33756444319">Demander ce véhicule</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="carte-vehicule reveal" style="--d:.08s">
+            <div class="carte-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=75" alt="Mercedes-AMG GT grise de face">
+              <span class="badge">Import Allemagne</span>
+            </div>
+            <div class="carte-corps">
+              <h3>Mercedes-AMG GT</h3>
+              <ul class="carte-specs">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2021</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>24 300 km</li>
+              </ul>
+              <div class="carte-bas">
+                <p class="prix"><small>À partir de</small><strong>84 900 €</strong></p>
+                <a class="btn-carte" href="tel:+33756444319">Demander ce véhicule</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="carte-vehicule reveal" style="--d:.16s">
+            <div class="carte-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=75" alt="Audi R8 V10 grise au coucher du soleil">
+              <span class="badge">Import Allemagne</span>
+            </div>
+            <div class="carte-corps">
+              <h3>Audi R8 V10</h3>
+              <ul class="carte-specs">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2020</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>31 200 km</li>
+              </ul>
+              <div class="carte-bas">
+                <p class="prix"><small>À partir de</small><strong>119 900 €</strong></p>
+                <a class="btn-carte" href="tel:+33756444319">Demander ce véhicule</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 4 -->
+          <article class="carte-vehicule reveal" style="--d:.24s">
+            <div class="carte-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1594502184342-2e12f877aa73?auto=format&fit=crop&w=800&q=75" alt="Porsche 911 Carrera S blanche sur route">
+              <span class="badge">Import Allemagne</span>
+            </div>
+            <div class="carte-corps">
+              <h3>Porsche 911 Carrera S</h3>
+              <ul class="carte-specs">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2021</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>22 800 km</li>
+              </ul>
+              <div class="carte-bas">
+                <p class="prix"><small>À partir de</small><strong>104 900 €</strong></p>
+                <a class="btn-carte" href="tel:+33756444319">Demander ce véhicule</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 5 -->
+          <article class="carte-vehicule reveal" style="--d:.32s">
+            <div class="carte-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1572811298797-9eecadf6cb24?auto=format&fit=crop&w=800&q=75" alt="Volkswagen Golf GTI blanche">
+              <span class="badge">Import Allemagne</span>
+            </div>
+            <div class="carte-corps">
+              <h3>Volkswagen Golf GTI</h3>
+              <ul class="carte-specs">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2022</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>15 400 km</li>
+              </ul>
+              <div class="carte-bas">
+                <p class="prix"><small>À partir de</small><strong>33 900 €</strong></p>
+                <a class="btn-carte" href="tel:+33756444319">Demander ce véhicule</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 6 -->
+          <article class="carte-vehicule reveal" style="--d:.4s">
+            <div class="carte-img">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1614026480209-cd9934144671?auto=format&fit=crop&w=800&q=75" alt="BMW M2 Competition bleue, calandre avant">
+              <span class="badge">Import Allemagne</span>
+            </div>
+            <div class="carte-corps">
+              <h3>BMW M2 Competition</h3>
+              <ul class="carte-specs">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2021</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>27 600 km</li>
+              </ul>
+              <div class="carte-bas">
+                <p class="prix"><small>À partir de</small><strong>52 900 €</strong></p>
+                <a class="btn-carte" href="tel:+33756444319">Demander ce véhicule</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= IMPORTATION SUR COMMANDE ================= -->
+    <section class="section import" id="importation">
+      <div class="conteneur import-grille">
+        <div class="import-img reveal">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=900&q=75" alt="Mercedes-AMG GT importée d'Allemagne sur une route de campagne au coucher du soleil">
+        </div>
+
+        <div>
+          <div class="reveal">
+            <p class="sur-titre">Importation sur commande</p>
+            <h2 class="titre-section">Vous rêvez d'un modèle précis&nbsp;? On le trouve pour vous.</h2>
+            <p class="texte-gris">Berline, break, SUV ou sportive : décrivez-nous le véhicule idéal et notre réseau de partenaires allemands — concessionnaires officiels, loueurs longue durée, plateformes professionnelles — le déniche au meilleur prix.</p>
+          </div>
+
+          <!-- Timeline animée au scroll -->
+          <ol class="timeline" id="timeline">
+            <li class="etape reveal">
+              <span class="etape-num">1</span>
+              <h3>Vous décrivez le véhicule recherché</h3>
+              <p>Modèle, finition, motorisation, budget : un appel suffit pour cadrer votre projet.</p>
+            </li>
+            <li class="etape reveal" style="--d:.15s">
+              <span class="etape-num">2</span>
+              <h3>On le source en Allemagne</h3>
+              <p>Recherche ciblée sur tout le territoire allemand, avec présélection sous 48 à 72&nbsp;h.</p>
+            </li>
+            <li class="etape reveal" style="--d:.3s">
+              <span class="etape-num">3</span>
+              <h3>Inspection &amp; négociation</h3>
+              <p>Contrôle sur place par un expert indépendant, historique vérifié, prix négocié pour vous.</p>
+            </li>
+            <li class="etape reveal" style="--d:.45s">
+              <span class="etape-num">4</span>
+              <h3>Carte grise &amp; livraison chez vous</h3>
+              <p>Transport, contrôle technique, immatriculation : vous recevez les clés, prêt à rouler.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= POURQUOI NOUS ================= -->
+    <section class="section" id="pourquoi">
+      <div class="conteneur">
+        <div class="section-tete reveal">
+          <p class="sur-titre">Pourquoi ENYA GROUP</p>
+          <h2 class="titre-section">L'import allemand, sans la paperasse</h2>
+        </div>
+
+        <div class="atouts-grille">
+          <div class="atout reveal">
+            <div class="atout-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 12 4.83A2 2 0 0 0 10.59 4H4a2 2 0 0 0-2 2v6.59A2 2 0 0 0 2.83 14l8.58 8.59a2 2 0 0 0 2.83 0l6.35-6.35a2 2 0 0 0 0-2.83z"/><circle cx="7.5" cy="7.5" r=".5"/></svg>
+            </div>
+            <h3>Prix allemands négociés</h3>
+            <p>Le marché allemand est plus vaste et plus compétitif : nous négocions directement à la source, sans intermédiaire.</p>
+          </div>
+
+          <div class="atout reveal" style="--d:.1s">
+            <div class="atout-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Historique vérifié</h3>
+            <p>Carnet d'entretien, rapports d'experts indépendants et kilométrage certifié avant tout engagement.</p>
+          </div>
+
+          <div class="atout reveal" style="--d:.2s">
+            <div class="atout-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
+            </div>
+            <h3>Garantie &amp; CT gérés</h3>
+            <p>Contrôle technique français, garantie panne mécanique et carte grise : tout est inclus, sans surprise.</p>
+          </div>
+
+          <div class="atout reveal" style="--d:.3s">
+            <div class="atout-icone">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3>Livraison partout en France</h3>
+            <p>Transport par camion plateau sécurisé, livré à votre porte avec remise des clés et des documents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AVIS CLIENTS ================= -->
+    <section class="section avis" id="avis">
+      <div class="conteneur">
+        <div class="section-tete reveal">
+          <p class="sur-titre">Ils nous font confiance</p>
+          <h2 class="titre-section">Avis de nos clients</h2>
+        </div>
+
+        <div class="avis-grille">
+          <article class="avis-carte reveal">
+            <div class="etoiles" aria-label="5 étoiles sur 5">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            </div>
+            <blockquote>«&nbsp;Ma Golf GTI livrée en 12 jours, carte grise faite, 6 000&nbsp;€ de moins qu'en France. Service impeccable du premier appel à la livraison.&nbsp;»</blockquote>
+            <p class="avis-auteur"><strong>Thomas</strong><span>Lyon — Golf GTI, 2022</span></p>
+          </article>
+
+          <article class="avis-carte reveal" style="--d:.12s">
+            <div class="etoiles" aria-label="5 étoiles sur 5">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            </div>
+            <blockquote>«&nbsp;J'ai décrit la Classe C exacte que je voulais, ils l'ont trouvée à Munich en trois jours. Tout était géré, je n'ai signé qu'une fois.&nbsp;»</blockquote>
+            <p class="avis-auteur"><strong>Sophie</strong><span>Bordeaux — Mercedes Classe C, 2021</span></p>
+          </article>
+
+          <article class="avis-carte reveal" style="--d:.24s">
+            <div class="etoiles" aria-label="5 étoiles sur 5">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            </div>
+            <blockquote>«&nbsp;Deuxième véhicule importé avec ENYA GROUP. Rapport d'inspection détaillé avant achat, zéro mauvaise surprise. Je recommande les yeux fermés.&nbsp;»</blockquote>
+            <p class="avis-auteur"><strong>Karim</strong><span>Lille — BMW X3, 2021</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT FINALE ================= -->
+    <section class="section contact" id="contact">
+      <div class="contact-media">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1611651338412-8403fa6e3599?auto=format&fit=crop&w=1920&q=75" alt="Porsche 911 grise sous la pluie, vue arrière de nuit">
+      </div>
+
+      <div class="conteneur contact-grille">
+        <div class="reveal">
+          <p class="sur-titre">Contact</p>
+          <h2>Un projet&nbsp;?<br><em>Parlons-en.</em></h2>
+          <p class="texte-gris">Un conseiller vous répond directement : estimation gratuite, disponibilités en Allemagne, délais et budget. Sans engagement.</p>
+          <a class="btn btn-or btn-geant" href="tel:+33756444319">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            07 56 44 43 19
+          </a>
+          <p class="contact-note">Appel gratuit — réponse rapide, 7j/7</p>
+        </div>
+
+        <!-- Mini-formulaire (front uniquement, confirmation simulée) -->
+        <div class="form-carte reveal" style="--d:.15s">
+          <form id="formRappel" novalidate>
+            <h3>Être rappelé</h3>
+            <p>Laissez vos coordonnées, un conseiller vous rappelle sous 24&nbsp;h.</p>
+            <div class="champ">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="champ">
+              <label for="tel">Téléphone</label>
+              <input type="tel" id="tel" name="tel" placeholder="06 12 34 56 78" required>
+            </div>
+            <div class="champ">
+              <label for="vehicule">Véhicule recherché</label>
+              <input type="text" id="vehicule" name="vehicule" placeholder="Ex. BMW Série 3 Touring, 2021, &lt; 60 000 km">
+            </div>
+            <div class="champ">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Précisez votre projet, votre budget, vos délais…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-or">Être rappelé</button>
+          </form>
+
+          <!-- Confirmation affichée après envoi -->
+          <div class="form-ok" id="formOk" role="status">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8.5 12.5 2.5 2.5 5-5.5"/></svg>
+            <h4>Demande bien reçue&nbsp;!</h4>
+            <p id="formOkTexte">Merci. Un conseiller ENYA GROUP vous rappelle sous 24&nbsp;h.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="pied">
+    <div class="conteneur">
+      <div class="pied-grille">
+        <div>
+          <a href="#haut" class="logo">ENYA<span>&nbsp;GROUP</span></a>
+          <p>Importation automobile — France / Allemagne.<br>Occasions premium sélectionnées, sourcing sur commande, démarches et livraison clés en main.</p>
+        </div>
+        <div>
+          <p class="sur-titre" style="margin-bottom:.9rem">Navigation</p>
+          <ul>
+            <li><a href="#vehicules">Véhicules</a></li>
+            <li><a href="#importation">Importation</a></li>
+            <li><a href="#pourquoi">Pourquoi nous</a></li>
+            <li><a href="#avis">Avis clients</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="sur-titre" style="margin-bottom:.9rem">Contact</p>
+          <a class="pied-tel" href="tel:+33756444319">07 56 44 43 19</a>
+          <p>Appel gratuit — 7j/7</p>
+        </div>
+      </div>
+      <div class="pied-bas">
+        <span>© 2026 ENYA GROUP — Tous droits réservés</span>
+        <span>Mentions légales · CGV · Politique de confidentialité (maquette)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton d'appel flottant (mobile uniquement) -->
+  <a class="appel-flottant" id="appelFlottant" href="tel:+33756444319" aria-label="Appeler ENYA GROUP">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ============================================================
+       ENYA GROUP — Interactions
+       Toutes les animations sont désactivées si l'utilisateur
+       préfère un mouvement réduit (prefers-reduced-motion).
+       ============================================================ */
+    (function(){
+      'use strict';
+
+      var reduitMouvement = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* ---------- 1. Header : transparent -> flouté au scroll ---------- */
+      var entete = document.getElementById('entete');
+      var appelFlottant = document.getElementById('appelFlottant');
+
+      function auDefilement(){
+        var y = window.scrollY;
+        entete.classList.toggle('scroll', y > 40);
+        // Bouton flottant : visible après le hero (mobile uniquement via CSS)
+        appelFlottant.classList.toggle('visible', y > window.innerHeight * 0.75);
+      }
+      window.addEventListener('scroll', auDefilement, { passive:true });
+      auDefilement();
+
+      /* ---------- 2. Menu burger mobile ---------- */
+      var burger = document.getElementById('burger');
+      var nav = document.getElementById('nav');
+      burger.addEventListener('click', function(){
+        var ouvert = nav.classList.toggle('ouvert');
+        burger.classList.toggle('ouvert', ouvert);
+        burger.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+      });
+      // Referme le menu au clic sur un lien d'ancre
+      nav.querySelectorAll('a').forEach(function(lien){
+        lien.addEventListener('click', function(){
+          nav.classList.remove('ouvert');
+          burger.classList.remove('ouvert');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      /* ---------- 3. Apparition au scroll (fade-up) ---------- */
+      var elementsReveal = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !reduitMouvement){
+        var observateur = new IntersectionObserver(function(entrees){
+          entrees.forEach(function(entree){
+            if (entree.isIntersecting){
+              entree.target.classList.add('visible');
+              observateur.unobserve(entree.target); // une seule fois
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        elementsReveal.forEach(function(el){ observateur.observe(el); });
+      } else {
+        elementsReveal.forEach(function(el){ el.classList.add('visible'); });
+      }
+
+      /* ---------- 4. Timeline du process : rail doré progressif ---------- */
+      var timeline = document.getElementById('timeline');
+      if (timeline && 'IntersectionObserver' in window && !reduitMouvement){
+        new IntersectionObserver(function(entrees, obs){
+          if (entrees[0].isIntersecting){
+            timeline.classList.add('in-view');
+            obs.disconnect();
+          }
+        }, { threshold: 0.25 }).observe(timeline);
+      } else if (timeline){
+        timeline.classList.add('in-view');
+      }
+
+      /* ---------- 5. Compteurs animés ---------- */
+      function animerCompteur(el){
+        var cible = parseInt(el.dataset.cible, 10);
+        var prefixe = el.dataset.prefixe || '';
+        var suffixe = el.dataset.suffixe || '';
+        if (reduitMouvement){
+          el.textContent = prefixe + cible + suffixe;
+          return;
+        }
+        var duree = 1800, depart = null;
+        function pas(ts){
+          if (!depart) depart = ts;
+          var t = Math.min((ts - depart) / duree, 1);
+          // easing ease-out-cubic
+          var progression = 1 - Math.pow(1 - t, 3);
+          el.textContent = prefixe + Math.round(cible * progression) + suffixe;
+          if (t < 1) requestAnimationFrame(pas);
+        }
+        requestAnimationFrame(pas);
+      }
+      var compteurs = document.querySelectorAll('.compteur');
+      if ('IntersectionObserver' in window){
+        var obsCompteurs = new IntersectionObserver(function(entrees){
+          entrees.forEach(function(entree){
+            if (entree.isIntersecting){
+              animerCompteur(entree.target);
+              obsCompteurs.unobserve(entree.target);
+            }
+          });
+        }, { threshold: 0.6 });
+        compteurs.forEach(function(c){ obsCompteurs.observe(c); });
+      } else {
+        compteurs.forEach(animerCompteur);
+      }
+
+      /* ---------- 6. Parallaxe subtile du hero ---------- */
+      var heroMedia = document.getElementById('heroMedia');
+      if (heroMedia && !reduitMouvement){
+        var rafEnCours = false;
+        window.addEventListener('scroll', function(){
+          if (rafEnCours) return;
+          rafEnCours = true;
+          requestAnimationFrame(function(){
+            var y = window.scrollY;
+            if (y < window.innerHeight * 1.2){
+              // L'image bouge ~3x plus lentement que le contenu
+              heroMedia.style.transform = 'translateY(' + (y * 0.32) + 'px)';
+            }
+            rafEnCours = false;
+          });
+        }, { passive:true });
+      }
+
+      /* ---------- 7. Formulaire simulé (front uniquement) ---------- */
+      var form = document.getElementById('formRappel');
+      var formOk = document.getElementById('formOk');
+      var formOkTexte = document.getElementById('formOkTexte');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var nom = form.nom.value.trim();
+        var tel = form.tel.value.trim();
+        if (!nom || !tel){
+          // Mise en avant des champs manquants
+          [form.nom, form.tel].forEach(function(champ){
+            if (!champ.value.trim()){
+              champ.style.borderColor = '#C9A96A';
+              champ.style.boxShadow = '0 0 0 3px rgba(201,169,106,.25)';
+            }
+          });
+          return;
+        }
+        if (nom) formOkTexte.textContent =
+          'Merci ' + nom + '. Un conseiller ENYA GROUP vous rappelle sous 24 h au ' + tel + '.';
+        form.style.display = 'none';
+        formOk.classList.add('visible');
+      });
+      // Nettoie le style d'erreur dès que l'utilisateur tape
+      form.querySelectorAll('input, textarea').forEach(function(champ){
+        champ.addEventListener('input', function(){
+          champ.style.borderColor = '';
+          champ.style.boxShadow = '';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

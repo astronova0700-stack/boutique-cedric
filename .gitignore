@@ -1,0 +1,25 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Fichiers temporaires
+*.tmp
+*.bak
+*.log
+
+# Tests / débogage locale
+/test/
+/tests/
+/debug/
+
+# Divers
+node_modules/
+__pycache__/
